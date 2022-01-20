@@ -64,6 +64,22 @@ public class Solution {
      *
      */
     static boolean hasCycle(SinglyLinkedListNode head) {
+        if(head != null){
+            SinglyLinkedListNode lebre = head;
+            SinglyLinkedListNode tartaruga = head;
+            while (lebre != null && lebre.next != null){
+
+                // Andam para o próximo caminho
+                lebre = lebre.next.next;
+                tartaruga = tartaruga.next;
+
+                if(lebre == tartaruga){
+                    //Encontrou um ciclo
+                    return true;
+                }
+
+            }
+        }
         return false;
     }
 
